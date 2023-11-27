@@ -16,7 +16,7 @@ class ItemController extends Controller
     {
         $items = Item::orderBy('id', 'DESC')->get();
 
-        return Inertia::render('Home', [
+        return Inertia::render('app', [
             'items' => $items->all(),
         ]);
     }
