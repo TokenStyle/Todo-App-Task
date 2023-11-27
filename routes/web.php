@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render("Home");
-});
+})->name('home');
 
-//Route::get('/', fn () => view('welcome'));
+Route::get('/items', [ItemController::class, 'index'])->name('items.all');
+Route::prefix('/item')->group(function () {
+    Route::post('/store', [ItemController::class, 'store'])->name('item.store');
+    Route::put('/{id}', [ItemController::class, 'update'])->name('item.put');
+    Route::delete('/{id}', [ItemController::class, 'delete'])->name('item.delete');
+})->name('item');
