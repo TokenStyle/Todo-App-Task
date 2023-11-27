@@ -41,8 +41,7 @@ class ItemController extends Controller
         $item = Item::find($id);
 
         if ($item) {
-            $item->complete = $request->item['complete'] ? true : false;
-            $item->complete_at = $request->item['complete'] ? Carbon::now() : null;
+            $item->name = $request->item['name'];
             $item->save();
 
             return back();
@@ -56,7 +55,7 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function delete(Item $item, $id)
+    public function delete($id)
     {
         $item = Item::find($id);
 
