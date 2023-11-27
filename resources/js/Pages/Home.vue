@@ -1,3 +1,3 @@
 <template>
-    <div>Welcome Home!</div>
+    <div class="">Welcome Home!</div>
 </template>
