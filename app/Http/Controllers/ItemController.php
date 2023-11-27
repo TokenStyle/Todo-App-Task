@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -29,7 +30,7 @@ class ItemController extends Controller
         $newItem->name = $request->item['name'];
         $newItem->save();
 
-        return $newItem;
+        return back();
     }
 
     /**
