@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('complete')->default(false);
-            $table->timestamp('complete_at')->nullable();
         });
     }
 
