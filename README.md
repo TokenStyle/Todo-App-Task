@@ -14,6 +14,7 @@
 -   php 8.1
 -   Laravel ^10.10
 -   inertiajs 0.6.11
+-   laravel-mix (Webpack) 6.0.49
 
 ### Frontend
 
